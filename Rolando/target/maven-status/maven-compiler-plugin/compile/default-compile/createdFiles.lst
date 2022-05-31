@@ -1,0 +1,7 @@
+ec\edu\ups\ejb\ProductoFacade.class
+ec\edu\ups\entidades\Bodega.class
+ec\edu\ups\ejb\AbstractFacade.class
+ec\edu\ups\entidades\Producto.class
+ec\edu\ups\beans\ControladorBodega.class
+ec\edu\ups\ejb\BodegaFacade.class
+ec\edu\ups\beans\ControlerProducto.class

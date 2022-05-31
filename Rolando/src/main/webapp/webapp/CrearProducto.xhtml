@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <meta charset="UTF-8"/>
+    <title>Formulario para nuevos Empleados</title>
+</h:head>
+<h:body>
+
+    <h:panelGrid border="1">
+        <f:facet name="header">
+            <h:outputText value="Formulario para nuevos Empleados"/>
+        </f:facet>
+        <h:link outcome="CrudEmpleados" value="volver"/>
+        <h:form>
+            <h:panelGrid columns="2">
+              
+                <h:outputLabel value="Nombre" for="nombre"/>
+                <h:inputText id="nombre" value="#{controladorEmpleado.producto.nombre}"/>
+
+                <h:outputLabel value="Stock Actual" for="stockActual"/>
+                <h:inputText id="stockActual" value="#{controladorProducto.producto.stockActual}"/>                                
+
+                <h:outputLabel value="Precio" for="precio"/>
+                <h:inputText id="precio" value="#{controladorProducto.producto.precio}"/>                               
+                <h:outputLabel value="Bodega" for="bodega"/>
+                <h:selectOneMenu id="bodega" value="#{controladorBodega.bodega.codigo}" >
+                    <f:selectItem itemLabel="Selecionar Bodega" itemValue="#{null}"/>
+                    <f:selectItems value="#{listadoBodega}" var="rol" itemLabel="#{bodega.nombre}" itemValue="#{bodega.codigo}"/>
+                </h:selectOneMenu>
+                <h:commandButton value="Crear" action="#{controladorProducto.guardar}"/>
+            </h:panelGrid>
+        </h:form>
+
+    </h:panelGrid>
+</h:body>
+</html>
